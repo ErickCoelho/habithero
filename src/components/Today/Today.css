@@ -1,0 +1,13 @@
+.headerText{
+    color: #BABABA;
+    margin-top: 5px;
+}
+
+.pageHeader.Today{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.headerText.progress{
+    color: #8FC549;
+}

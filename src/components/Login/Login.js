@@ -5,7 +5,6 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import TokenContext from '../../context/TokenContext';
 import UserContext from '../../context/UserContext';
-import { Navigate } from "react-router-dom";
 
 export default function Login() {
     const [loginInfo, setLoginInfo] = useState({});
@@ -30,7 +29,7 @@ export default function Login() {
     }
 
     return (
-        <>
+        <LoginBody>
             <Logo><img src={logoImage} alt="logo" /></Logo>
             <form onSubmit={loginUser}>
                 <input type="email" placeholder="email" autoComplete="on" onChange={(e) => setLoginInfo({ ...loginInfo, email: e.target.value })}></input>
@@ -39,7 +38,7 @@ export default function Login() {
                 <Link to="/cadastro" className="signupLink">Não tem uma conta? Cadastre-se!</Link>
             </form>
 
-        </>
+        </LoginBody>
     );
 }
 
@@ -49,4 +48,15 @@ const Logo = styled.div`
     img {
         width: 100%;
     }
+`;
+
+const LoginBody = styled.div`
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    width: 100%;
+    background-color: white;
+    height: 100%;
+    margin: 0;
 `;

@@ -12,67 +12,10 @@ export default function Historic(){
             <Header />
             <Navbar />
             <div className='pagesBody'>
-                <div>Historic!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>Hello World!</div>
-                <div>{user.name}</div>
+                <div className='pageHeader'>
+                    <div className='title'>Histórico</div>
+                </div>
+                <div className='text'>Em breve você poderá ver o histórico dos seus hábitos aqui!</div>
             </div>
         </>
     );

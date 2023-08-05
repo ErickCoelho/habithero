@@ -18,7 +18,7 @@ export default function Signup() {
 
 
     return (
-        <>
+        <SignupBody>
             <Logo><img src={logoImage} alt="logo" /></Logo>
             <form onSubmit={createUser}>
                 <input type="email" placeholder="email" onChange={(e) => setSignupInfos({ ...signupInfos, email: e.target.value })}></input>
@@ -28,7 +28,7 @@ export default function Signup() {
                 <button type="submit">Cadastrar</button>
                 <Link to="/" className="signupLink">Já tem uma conta? Faça login!</Link>
             </form>
-        </>
+        </SignupBody>
     );
 }
 
@@ -38,4 +38,15 @@ const Logo = styled.div`
     img {
         width: 100%;
     }
+`;
+
+const SignupBody = styled.div`
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    width: 100%;
+    background-color: white;
+    height: 100%;
+    margin: 0;
 `;

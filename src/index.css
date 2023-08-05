@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #FAFAFA;
+  background-color: #F2F2F2;
   font-family: 'Lexend Deca';
   color: #262626;
   font-weight: 400;
@@ -14,6 +14,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 input {
@@ -74,6 +78,5 @@ img.profile{
 }
 
 .pagesBody{
-  background-color: #F2F2F2;
-  padding: 85px 20px 116px 20px;
+  padding: 75px 20px 116px 20px;
 }

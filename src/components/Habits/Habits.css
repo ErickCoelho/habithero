@@ -1,0 +1,30 @@
+.pageHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.pageHeader .title{
+    color: #126BA5;
+    font-size: 23px;
+}
+
+.pageHeader .icon{
+    background-color: #52B6FF;
+    width: 40px;
+    height: 35px;
+    border-radius: 4.6px;
+    border: none;
+
+    color: white;
+    font-size: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text{
+    color: #666;
+}
