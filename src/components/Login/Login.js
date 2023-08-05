@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logoImage from "../../assets/logo.png";
 import styled from 'styled-components';
 import { useState, useContext } from "react";
 import axios from "axios";
 import TokenContext from '../../context/TokenContext';
 import UserContext from '../../context/UserContext';
+import { Navigate } from "react-router-dom";
 
 export default function Login() {
     const [loginInfo, setLoginInfo] = useState({});
     const { setToken } = useContext(TokenContext);
     const { setUser } = useContext(UserContext);
+    const navigate = useNavigate();
 
     function loginUser(event) {
         event.preventDefault();
@@ -19,16 +21,20 @@ export default function Login() {
                 console.log(response);
                 setUser(response.data);
                 setToken(response.data.token);
+                navigate('/habitos');
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error);
+                alert("Insira as informações corretas!")
+            });
     }
 
     return (
         <>
             <Logo><img src={logoImage} alt="logo" /></Logo>
             <form onSubmit={loginUser}>
-                <input type="email" placeholder="email" onChange={(e) => setLoginInfo({ ...loginInfo, email: e.target.value })}></input>
-                <input type="password" placeholder="senha" onChange={(e) => setLoginInfo({ ...loginInfo, password: e.target.value })}></input>
+                <input type="email" placeholder="email" autoComplete="on" onChange={(e) => setLoginInfo({ ...loginInfo, email: e.target.value })}></input>
+                <input type="password" placeholder="senha" autoComplete="on" onChange={(e) => setLoginInfo({ ...loginInfo, password: e.target.value })}></input>
                 <button type="submit">Entrar</button>
                 <Link to="/cadastro" className="signupLink">Não tem uma conta? Cadastre-se!</Link>
             </form>

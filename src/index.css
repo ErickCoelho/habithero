@@ -10,7 +10,6 @@ body {
   color: #262626;
   font-weight: 400;
   font-size: 16px;
-  margin: 67px 30px 0 30px;
 }
 
 a {
@@ -72,4 +71,9 @@ form button {
 img.profile{
   border-radius: 50%;
   height: 80%;
+}
+
+.pagesBody{
+  background-color: #F2F2F2;
+  padding: 85px 20px 116px 20px;
 }

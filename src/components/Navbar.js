@@ -24,6 +24,7 @@ const NavBar = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 0 10px;
+  background-color: white;
 `;
 
 const NavLink = styled(Link)`
