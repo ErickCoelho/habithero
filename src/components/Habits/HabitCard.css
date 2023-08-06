@@ -1,0 +1,43 @@
+.habitCard{
+    max-width: 340px;
+    border-radius: 5px;
+    background-color: white;
+    color: #666;
+    margin: 5px 0;
+
+    position: relative;
+    padding: 15px;
+}
+
+.habitCard .delete{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.habitCard .dates{
+    display: flex;
+    margin-top: 8px;
+}
+
+.habitCard .dates .date{
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 5px;
+    
+    border: 1px solid #D4D4D4;
+    color: #D4D4D4;
+    background: #FFF;
+}
+
+.habitCard .dates .date.selected{
+    border: 1px solid #D4D4D4;
+    color: #FFF;
+    background: #D4D4D4;
+}

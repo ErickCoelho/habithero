@@ -1,0 +1,66 @@
+.createHabit {
+    max-width: 340px;
+    border-radius: 5px;
+    background-color: white;
+    color: #666;
+    margin: 5px 0;
+    padding: 15px;
+
+    position: relative;
+}
+
+.createHabit input {
+    width: 100%;
+}
+
+.createHabit .dates {
+    display: flex;
+    margin-top: 8px;
+}
+
+.createHabit .dates .date {
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    border: 1px solid #D4D4D4;
+    color: #D4D4D4;
+    background: #FFF;
+}
+
+.createHabit .dates .date.selected {
+    border: 1px solid #D4D4D4;
+    color: #FFF;
+    background: #D4D4D4;
+}
+
+.createHabit .buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.createHabit .buttons button {
+    margin-left: 20px;
+    width: 84px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+}
+
+.createHabit .buttons button.save{
+    background: #52B6FF;
+    color: white;
+}
+
+.createHabit .buttons button.cancel{
+    background: white;
+    color: #52B6FF;
+}

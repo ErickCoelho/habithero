@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import UserContext from "../../context/UserContext";
 import Header from '../Header';
 import Navbar from '../Navbar';
+import TodayCard from './TodayCard';
 import './Today.css';
 
 
@@ -21,6 +22,7 @@ export default function Today(){
                     {progress !== 0 && <div className='headerText progress'>{progress}% dos hábitos concluídos!</div>}
                 </div>
                 <div>Today!</div>
+                <TodayCard />
                 
             </div>
         </>

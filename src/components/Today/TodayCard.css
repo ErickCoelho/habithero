@@ -1,0 +1,52 @@
+.todayCard{
+    max-width: 340px;
+    border-radius: 5px;
+    background-color: white;
+    color: #666;
+    margin: 5px 0;
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.todayCard .title{
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.todayCard .description{
+    font-size: 13px;
+    margin-bottom: 3px;
+
+    display: flex;
+}
+
+.todayCard .check{
+    min-width: 69px;
+    height: 69px;
+    border-radius: 5px;
+    border: 1px solid #E7E7E7;
+    background: #EBEBEB;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todayCard .check ion-icon{
+    font-size: 40px;
+    color: white;
+}
+
+.todayCard .selected, .unselected{
+    margin-left: 3px;
+}
+
+.todayCard .selected{
+    color: #8FC549;
+}
+
+.todayCard .check.selected{
+    background-color: #8FC549;
+}

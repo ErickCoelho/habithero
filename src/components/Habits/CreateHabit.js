@@ -1,11 +1,10 @@
-import './HabitCard.css';
+import './CreateHabit.css';
 
-export default function HabitCard(){
+export default function CreateHabit(){
 
     return(
-        <div className="habitCard">
-            <div className="delete"><ion-icon name="trash-outline"></ion-icon></div>
-            <div className="title">Ler 1 capitulo de livro</div>
+        <div className="createHabit">
+            <input type='text' placeholder='Descrição do hábito'></input>
             <div className="dates">
                 <div className="date">D</div>
                 <div className="date selected">S</div>
@@ -14,6 +13,10 @@ export default function HabitCard(){
                 <div className="date">Q</div>
                 <div className="date">S</div>
                 <div className="date">S</div>
+            </div>
+            <div className='buttons'>
+                <button className='cancel'>Cancelar</button>
+                <button className='save'>Salvar</button>
             </div>
         </div>
     );
