@@ -1,13 +1,26 @@
 import './TodayCard.css';
+import { useContext } from 'react';
+import TokenContext from '../../context/TokenContext'
+import axios from 'axios';
 
 export default function Today({ todayInfo }){
+
+    const { token } = useContext(TokenContext);
 
     function handleClickCheck(done){
         if (done){
             alert("Unchecking");
+            axios.post(
+                `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${todayInfo.id}/uncheck`,
+                { headers: { Authorization: `Bearer ${token}` }}
+            );
         }
         else {
             alert("Checking");
+            axios.post(
+                `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${todayInfo.id}/check`,
+                { headers: { Authorization: `Bearer ${token}` }}
+            );
         }
     }
 
