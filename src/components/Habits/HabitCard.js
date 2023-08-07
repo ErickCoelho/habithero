@@ -1,18 +1,20 @@
 import './HabitCard.css';
 
-export default function HabitCard({ habitInfo }){
-    const days = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
+export default function HabitCard({ habitInfo }) {
+    const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
 
-    return(
+    function handleDelete() {
+        alert('deleting');
+    }
+
+    return (
         <div className="habitCard">
-            <div className="delete"><ion-icon name="trash-outline"></ion-icon></div>
+            <div className="delete"><ion-icon name="trash-outline" onClick={handleDelete}></ion-icon></div>
             <div className="title">{habitInfo.name}</div>
             <div className="dates">
-                {
-                    days.map(item => 
-                        <div className={`date ${item === 'S' ? 'selected' : ''}`}>{item}</div>
-                    )
-                }
+                {weekDays.map(item =>
+                    <div className={`date ${item === 'S' ? 'selected' : ''}`}>{item}</div> // tem que comparar o index do map e ver se está contido no habitsInfo.days
+                )}
             </div>
         </div>
     );
