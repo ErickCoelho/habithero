@@ -1,5 +1,7 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import UserContext from "../../context/UserContext";
+import TokenContext from '../../context/TokenContext';
+import axios from 'axios';
 import Header from '../Header';
 import Navbar from '../Navbar';
 import HabitCard from './HabitCard';
@@ -8,21 +10,22 @@ import './Habits.css';
 
 
 export default function Habits(){
+    const { token } = useContext(TokenContext);
     const { user } = useContext(UserContext);
     const [ creatingHabit, setCreatingHabit ] = useState(false);
+    const [ habitsResponse, setHabitsResponse ] = useState([]); 
 
-    const habitsResponse = [
-        {
-            id: 1,
-            name: "Nome do hábito",
-            days: [1, 3, 5]
-        },
-        {
-            id: 2,
-            name: "Nome do hábito 2",
-            days: [1, 3, 4, 6]
-        }
-    ];
+    useEffect(() => {
+        axios.get(
+            `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits`,
+            { headers: { Authorization: `Bearer ${token}` }}
+        )
+        .then(response => {
+            setHabitsResponse(response.data);
+            console.log(response.data);
+        });
+    }, [creatingHabit, token]); //não tá atualizando quando eu crio um novo hábito // preciso manter token nas deps?
+
 
 
     return(

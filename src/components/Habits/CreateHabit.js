@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import TokenContext from '../../context/TokenContext';
+import axios from 'axios';
 import './CreateHabit.css';
 
 export default function CreateHabit({ setCreatingHabit }){
+    const { token } = useContext(TokenContext);
     const [habitInfo, setHabitInfo] = useState({name: "", days: []});
     const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
 
@@ -19,6 +22,13 @@ export default function CreateHabit({ setCreatingHabit }){
             alert("O hábito deve ter um nome e ao menos um dia marcado.");
         else{
             alert('Hábito cadastrado com sucesso!');
+            axios.post(
+                `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits`,
+                habitInfo,
+                { headers: { Authorization: `Bearer ${token}` }}
+            )
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
             console.log(habitInfo);
             setCreatingHabit(false);
         }
