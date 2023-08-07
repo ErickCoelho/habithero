@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import UserContext from "../../context/UserContext";
 import Header from '../Header';
 import Navbar from '../Navbar';
@@ -9,7 +9,20 @@ import './Habits.css';
 
 export default function Habits(){
     const { user } = useContext(UserContext);
-    const habitsArray = {};
+    
+    const habitsResponse = [
+        {
+            id: 1,
+            name: "Nome do hábito",
+            days: [1, 3, 5]
+        },
+        {
+            id: 2,
+            name: "Nome do hábito 2",
+            days: [1, 3, 4, 6]
+        }
+    ];
+
 
     return(
         <>
@@ -20,9 +33,11 @@ export default function Habits(){
                     <div className='title'>Meus hábitos</div>
                     <button className='icon'>+</button>
                 </div>
-                {Object.keys(habitsArray).length === 0 && <div className='text'>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</div>}
-                <HabitCard />
+
                 <CreateHabit />
+                { habitsResponse.map(item => <HabitCard habitInfo = {item} />) }
+
+                {habitsResponse.length === 0 && <div className='text'>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</div>}
             </div>
         </>
     );

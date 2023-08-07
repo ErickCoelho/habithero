@@ -1,15 +1,16 @@
 import './TodayCard.css';
 
-export default function Today(){
+export default function Today({ todayInfo }){
 
+    console.log(todayInfo);
     return(
         <div className="todayCard">
             <div className='texts'>
-                <div className="title">Ler 1 capitulo de livro</div>
-                <div className="description">Sequência atual: <div className='selected'>3 dias</div></div>
-                <div className="description">Seu recorde: <div className='unselected'>5 dias</div></div>
+                <div className="title">{todayInfo.name}</div>
+                <div className="description">Sequência atual: <div className={todayInfo.done ? 'selected' : 'unselected'}>{todayInfo.currentSequence} dias</div></div>
+                <div className="description">Seu recorde: <div className={todayInfo.highestSequence === todayInfo.currentSequence ? 'selected' : 'unselected'}>{todayInfo.highestSequence} dias</div></div>
             </div>
-            <div className="check selected"><ion-icon name="checkmark-outline"></ion-icon></div>
+            <div className={`check ${todayInfo.done ? 'selected' : ''}`}><ion-icon name="checkmark-outline"></ion-icon></div>
         </div>
     );
 }

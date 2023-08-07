@@ -11,6 +11,23 @@ export default function Today(){
     const date = "Segunda, 17/05";
     const progress = 30;
 
+    const todayResponse = [
+        {
+            id: 3,
+            name: "Acordar",
+            done: true,
+            currentSequence: 1,
+            highestSequence: 1
+        },
+        {
+            id: 4,
+            name: "Dormir",
+            done: false,
+            currentSequence: 2,
+            highestSequence: 4
+        }
+    ];
+
     return(
         <>
             <Header />
@@ -21,8 +38,8 @@ export default function Today(){
                     {progress === 0 && <div className='headerText'>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</div>}
                     {progress !== 0 && <div className='headerText progress'>{progress}% dos hábitos concluídos!</div>}
                 </div>
-                <div>Today!</div>
-                <TodayCard />
+                
+                { todayResponse.map(item => <TodayCard todayInfo={ item } />) }
                 
             </div>
         </>
