@@ -39,7 +39,7 @@ export default function CreateHabit({ setCreatingHabit }){
             <input type='text' placeholder='Descrição do hábito' value={habitInfo.name} onChange={(e) => setHabitInfo({...habitInfo, name: e.target.value})}></input>
             <div className="dates">
                 {weekDays.map((item, index) =>
-                    <div className={`date ${habitInfo.days.includes(index) ? 'selected' : ''}`} onClick={() => handleDaySelection(index)}>{item}</div>// mais ou menos mesma ideia: tem que comparar o index do map e ver se está contido no habitsInfo.days   // acho que tem que add uma tag id na div com o index e quando clicar pegar esse idex e salvar no habitInfo.days
+                    <div className={`date ${habitInfo.days.includes(index) ? 'selected' : ''}`} onClick={() => handleDaySelection(index)}>{item}</div>
                 )}
             </div>
             <div className='buttons'>

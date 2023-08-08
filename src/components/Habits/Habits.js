@@ -24,7 +24,7 @@ export default function Habits(){
             setHabitsResponse(response.data);
             console.log(response.data);
         });
-    }, [creatingHabit, token]); //não tá atualizando quando eu crio um novo hábito // preciso manter token nas deps?
+    }, [creatingHabit, token]); // não tá atualizando quando eu crio um novo hábito => preciso manter token nas deps? => agora tá atualizando mas não pela criacao propriamente dita e sim pela propriedade que oculta o card de criacao => nao tá atualizando quando deleto
 
 
 
