@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import logotext from '../assets/logotext.png';
+import UserContext from '../context/UserContext';
+import { useContext } from 'react';
 
 export default function Header() {
-    const profileUrl = 'https://almeidajunior-prod1.s3.amazonaws.com/prod/uploads/news/5d81505ac6770.jpg';
+    const { user } = useContext(UserContext);
 
     return (
         <HeaderBar>
             <Images src={logotext} />
-            <Images className='profile' src={profileUrl} />
+            <Images className='profile' src={user.image} />
         </HeaderBar>
     );
 }

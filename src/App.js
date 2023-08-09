@@ -9,8 +9,8 @@ import TokenContext from './context/TokenContext';
 import { useState } from "react";
 
 function App() {
-const [ user, setUser ] = useState(null);
-const [ token, setToken ] = useState("");
+  const [user, setUser] = useState(localStorage.getItem('user') || null);
+  const [token, setToken] = useState(localStorage.getItem('token') || "");
 
 
   return (

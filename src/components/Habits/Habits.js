@@ -14,18 +14,20 @@ export default function Habits(){
     const { user } = useContext(UserContext);
     const [ creatingHabit, setCreatingHabit ] = useState(false);
     const [ habitsResponse, setHabitsResponse ] = useState([]); 
-
-    useEffect(() => {
+    
+    function getHabits(){
         axios.get(
             `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits`,
             { headers: { Authorization: `Bearer ${token}` }}
         )
         .then(response => {
             setHabitsResponse(response.data);
-            console.log(response.data);
         });
-    }, [creatingHabit, token]); // não tá atualizando quando eu crio um novo hábito => preciso manter token nas deps? => agora tá atualizando mas não pela criacao propriamente dita e sim pela propriedade que oculta o card de criacao => nao tá atualizando quando deleto
+    }
 
+    useEffect(() => {
+        getHabits();
+    }, []);
 
 
     return(
@@ -38,8 +40,8 @@ export default function Habits(){
                     <button className='icon' onClick={() => setCreatingHabit(true)}>+</button>
                 </div>
 
-                {creatingHabit ? <CreateHabit setCreatingHabit={setCreatingHabit} /> : ''}
-                { habitsResponse.map(item => <HabitCard habitInfo = {item} />) }
+                {creatingHabit ? <CreateHabit setCreatingHabit={setCreatingHabit} getHabits={getHabits} setHabitsResponse={setHabitsResponse} /> : ''}
+                { habitsResponse.map(item => <HabitCard habitInfo = {item} getHabits={getHabits} setHabitsResponse={setHabitsResponse} />) }
 
                 {habitsResponse.length === 0 && <div className='text'>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</div>}
             </div>

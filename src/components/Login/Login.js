@@ -17,15 +17,16 @@ export default function Login() {
 
         axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login", loginInfo)
             .then(response => {
-                console.log(response);
                 setUser(response.data);
+                localStorage.setItem('user', response.data);
                 setToken(response.data.token);
-                navigate('/habitos');
+                localStorage.setItem('token', response.data.token);
+                navigate('/hoje');
             })
             .catch(error => {
-                console.log(error);
                 alert("Insira as informações corretas!")
-            });
+            }
+        );
     }
 
     return (

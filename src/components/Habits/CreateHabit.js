@@ -3,7 +3,7 @@ import TokenContext from '../../context/TokenContext';
 import axios from 'axios';
 import './CreateHabit.css';
 
-export default function CreateHabit({ setCreatingHabit }){
+export default function CreateHabit({ setCreatingHabit, getHabits, setHabitsResponse }){
     const { token } = useContext(TokenContext);
     const [habitInfo, setHabitInfo] = useState({name: "", days: []});
     const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
@@ -26,11 +26,9 @@ export default function CreateHabit({ setCreatingHabit }){
                 `https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits`,
                 habitInfo,
                 { headers: { Authorization: `Bearer ${token}` }}
-            )
-            .then(response => console.log(response))
-            .catch(error => console.log(error));
-            console.log(habitInfo);
+            );
             setCreatingHabit(false);
+            getHabits();
         }
     }
 

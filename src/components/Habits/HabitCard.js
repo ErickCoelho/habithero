@@ -3,16 +3,16 @@ import './HabitCard.css';
 import { useContext } from 'react';
 import TokenContext from '../../context/TokenContext';
 
-export default function HabitCard({ habitInfo }) {
+export default function HabitCard({ habitInfo, getHabits, setHabitsResponse  }) {
     const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
     const { token } = useContext(TokenContext);
 
     function handleDelete(id) {
-        alert('deleting');
         axios.delete(`
             https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`,
             { headers: { Authorization: `Bearer ${token}` }}
         );
+        getHabits();
     }
 
     return (

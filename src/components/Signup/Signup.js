@@ -10,10 +10,7 @@ export default function Signup() {
     function createUser(e) {
         e.preventDefault();
 
-        console.log("OI");
-        axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up", signupInfos)
-            .then(response => { console.log('Response:', response) })
-            .catch((error) => console.log('Error:', error));
+        axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up", signupInfos);
     }
 
 
