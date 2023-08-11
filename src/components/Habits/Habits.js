@@ -41,7 +41,7 @@ export default function Habits(){
                 </div>
 
                 {creatingHabit ? <CreateHabit setCreatingHabit={setCreatingHabit} getHabits={getHabits} setHabitsResponse={setHabitsResponse} /> : ''}
-                { habitsResponse.map(item => <HabitCard habitInfo = {item} getHabits={getHabits} setHabitsResponse={setHabitsResponse} />) }
+                { habitsResponse.map(item => <HabitCard habitInfo = {item} getHabits={getHabits} setHabitsResponse={setHabitsResponse} key={item.id} />) }
 
                 {habitsResponse.length === 0 && <div className='text'>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</div>}
             </div>

@@ -44,7 +44,7 @@ export default function Today() {
                     {progress !== 0 && <div className='headerText progress'>{progress}% dos hábitos concluídos!</div>}
                 </div>
 
-                {todayResponse.map(item => <TodayCard todayInfo={item} getTodayData={getTodayData} setTodayResponse={setTodayResponse} />)}
+                {todayResponse.map(item => <TodayCard todayInfo={item} getTodayData={getTodayData} setTodayResponse={setTodayResponse} key={item.id} />)}
 
             </div>
         </>

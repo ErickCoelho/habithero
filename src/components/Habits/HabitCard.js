@@ -21,7 +21,7 @@ export default function HabitCard({ habitInfo, getHabits, setHabitsResponse  }) 
             <div className="title">{habitInfo.name}</div>
             <div className="dates">
                 {weekDays.map((item, index) =>
-                    <div className={`date ${habitInfo.days.includes(index) ? 'selected' : ''}`}>{item}</div>
+                    <div className={`date ${habitInfo.days.includes(index) ? 'selected' : ''}`} key={index}>{item}</div>
                 )}
             </div>
         </div>

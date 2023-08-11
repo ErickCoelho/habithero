@@ -37,7 +37,7 @@ export default function CreateHabit({ setCreatingHabit, getHabits, setHabitsResp
             <input type='text' placeholder='Descrição do hábito' value={habitInfo.name} onChange={(e) => setHabitInfo({...habitInfo, name: e.target.value})}></input>
             <div className="dates">
                 {weekDays.map((item, index) =>
-                    <div className={`date ${habitInfo.days.includes(index) ? 'selected' : ''}`} onClick={() => handleDaySelection(index)}>{item}</div>
+                    <div className={`date ${habitInfo.days.includes(index) ? 'selected' : ''}`} onClick={() => handleDaySelection(index)} key={index}>{item}</div>
                 )}
             </div>
             <div className='buttons'>
